@@ -342,64 +342,108 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-800 dark:to-indigo-900 text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern opacity-10"></div>
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Turn Unused Software Into <span className="text-blue-200">Instant Cash</span>
-              </h1>
-              <p className="text-xl mb-8 opacity-90 font-light">SoftSell helps you sell unused software licenses securely and easily.</p>
-              <motion.button 
-                className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700 py-3 px-8 rounded-lg font-medium shadow-lg flex items-center gap-2 group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Sell My Licenses
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </motion.div>
-            
-            <motion.div 
-              className="hidden md:block"
-              initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
-              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-2xl relative z-10 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-90">
-                <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-6">
-                  <div className="h-4 w-3/4 bg-blue-200 dark:bg-blue-700 rounded mb-3"></div>
-                  <div className="h-4 w-1/2 bg-blue-200 dark:bg-blue-700 rounded"></div>
-                </div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-14 w-14 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center text-green-600 dark:text-green-300 text-xl">
-                    <FaCalculator />
-                  </div>
-                  <div className="flex-1">
-                    <div className="h-4 w-32 bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
-                    <div className="h-3 w-48 bg-gray-200 dark:bg-gray-600 rounded"></div>
-                  </div>
-                </div>
-                <motion.div 
-                  className="h-12 w-full bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-lg flex items-center justify-center text-white font-medium gap-2"
-                  whileHover={{ y: -2, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}
-                >
-                  Get Valuation
-                  <FaArrowRight />
-                </motion.div>
-              </div>
-            </motion.div>
+     <section className="bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-700 dark:to-indigo-900 text-white py-24 relative overflow-hidden">
+  {/* Subtle background pattern */}
+  <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
+  
+  {/* Decorative circles */}
+  <div className="absolute top-20 -left-16 w-64 h-64 bg-blue-400 dark:bg-blue-800 rounded-full opacity-10 blur-3xl"></div>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-indigo-400 dark:bg-indigo-800 rounded-full opacity-10 blur-3xl"></div>
+  
+  <div className="container mx-auto px-4 max-w-6xl relative z-10">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Content section */}
+      <div className="space-y-6">
+        <div className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-2">
+          Reclaim Value From Unused Assets
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          Turn Unused Software Into <span className="text-blue-100 dark:text-blue-200">Instant Cash</span>
+        </h1>
+        <p className="text-xl opacity-90 font-light">SoftSell helps you sell unused software licenses securely and easily.</p>
+        
+        {/* Stats */}
+        <div className="flex flex-wrap gap-8 mt-4 mb-8">
+          <div>
+            <div className="text-2xl font-bold text-blue-100 dark:text-blue-200">$4.2M+</div>
+            <div className="text-sm opacity-80">Recovered Value</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-blue-100 dark:text-blue-200">12,000+</div>
+            <div className="text-sm opacity-80">Licenses Sold</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-blue-100 dark:text-blue-200">98%</div>
+            <div className="text-sm opacity-80">Satisfaction Rate</div>
           </div>
         </div>
-        <div className="absolute -bottom-12 left-0 right-0 h-24 bg-gray-50 dark:bg-gray-900 -skew-y-3"></div>
-      </section>
+        
+        {/* CTA buttons */}
+        <div className="flex flex-wrap gap-4">
+          <button className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 py-3 px-8 rounded-lg font-medium shadow-md flex items-center gap-2 group transition-all duration-200">
+            Sell My Licenses
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+          <button className="bg-transparent border border-white/30 hover:bg-white/10 py-3 px-8 rounded-lg font-medium flex items-center gap-2 transition-all duration-200">
+            How It Works
+          </button>
+        </div>
+      </div>
+      
+      {/* Card section */}
+      <div className="relative">
+        <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 dark:bg-yellow-500 rounded-lg opacity-20 blur-2xl"></div>
+        <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-400 dark:bg-purple-600 rounded-lg opacity-20 blur-2xl"></div>
+        
+        <div className="bg-white/95 dark:bg-gray-800/95 p-8 rounded-2xl shadow-xl relative backdrop-blur-sm border border-white/20 dark:border-gray-700/30">
+          <div className="absolute -top-3 -right-3 bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-300 text-xs font-bold py-1 px-3 rounded-full">
+            Instant Quote
+          </div>
+          
+          <div className="bg-gray-100 dark:bg-gray-700/60 p-4 rounded-xl mb-6">
+            <div className="h-4 w-3/4 bg-blue-200 dark:bg-blue-700/60 rounded mb-3"></div>
+            <div className="h-4 w-1/2 bg-blue-200 dark:bg-blue-700/60 rounded"></div>
+          </div>
+          
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-14 w-14 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center text-green-600 dark:text-green-300 text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <div className="h-4 w-32 bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
+              <div className="h-3 w-48 bg-gray-200 dark:bg-gray-600 rounded"></div>
+            </div>
+          </div>
+          
+          <button className="h-12 w-full bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 hover:from-blue-600 hover:to-blue-700 dark:hover:from-blue-500 dark:hover:to-blue-600 rounded-lg flex items-center justify-center text-white font-medium gap-2 transition-all duration-200 shadow-md hover:shadow-lg">
+            Get Valuation
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+          
+          {/* Trust indicators */}
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700/30">
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center mb-3">Trusted by organizations worldwide</p>
+            <div className="flex justify-between items-center opacity-70">
+              <div className="h-5 w-16 bg-gray-300 dark:bg-gray-600 rounded"></div>
+              <div className="h-5 w-12 bg-gray-300 dark:bg-gray-600 rounded"></div>
+              <div className="h-5 w-14 bg-gray-300 dark:bg-gray-600 rounded"></div>
+              <div className="h-5 w-10 bg-gray-300 dark:bg-gray-600 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {/* Improved bottom divider */}
+  <div className="absolute -bottom-12 left-20 right-0 h-24 bg-gray-50 dark:bg-gray-800 -skew-y-3"></div>
+  </section>
 
       {/* How It Works */}
       <section id="how-it-works" className="py-24 bg-white dark:bg-gray-800">
