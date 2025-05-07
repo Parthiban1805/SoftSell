@@ -342,7 +342,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-     <section className="bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-700 dark:to-indigo-900 text-white py-24 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-700 dark:to-indigo-900 text-white py-24 relative overflow-hidden">
   {/* Subtle background pattern */}
   <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
   
@@ -352,62 +352,199 @@ function App() {
   
   <div className="container mx-auto px-4 max-w-6xl relative z-10">
     <div className="grid md:grid-cols-2 gap-12 items-center">
-      {/* Content section */}
+      {/* Content section with animations */}
       <div className="space-y-6">
-        <div className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-2">
+        {/* Badge with animation */}
+        <motion.div 
+          className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Reclaim Value From Unused Assets
-        </div>
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Turn Unused Software Into <span className="text-blue-100 dark:text-blue-200">Instant Cash</span>
-        </h1>
-        <p className="text-xl opacity-90 font-light">SoftSell helps you sell unused software licenses securely and easily.</p>
+        </motion.div>
         
-        {/* Stats */}
-        <div className="flex flex-wrap gap-8 mt-4 mb-8">
-          <div>
+        {/* Main heading with word-by-word animation */}
+        <motion.h1 
+          className="text-4xl md:text-5xl font-bold leading-tight"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+              }
+            }
+          }}
+        >
+          {/* Animate each word separately */}
+          <motion.span 
+            className="inline-block"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            Turn
+          </motion.span>{' '}
+          <motion.span 
+            className="inline-block"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            Unused
+          </motion.span>{' '}
+          <motion.span 
+            className="inline-block"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            Software
+          </motion.span>{' '}
+          <motion.span 
+            className="inline-block"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            Into
+          </motion.span>{' '}
+          <motion.span 
+            className="inline-block text-blue-100 dark:text-blue-200"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { 
+                opacity: 1, 
+                y: 0, 
+                transition: { 
+                  duration: 0.8,
+                  ease: "easeOut"
+                } 
+              }
+            }}
+          >
+            Instant Cash
+          </motion.span>
+        </motion.h1>
+        
+        {/* Subheading with fade animation */}
+        <motion.p 
+          className="text-xl opacity-90 font-light"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.9 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          SoftSell helps you sell unused software licenses securely and easily.
+        </motion.p>
+        
+        {/* Stats with animation */}
+        <motion.div 
+          className="flex flex-wrap gap-8 mt-4 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <div className="text-2xl font-bold text-blue-100 dark:text-blue-200">$4.2M+</div>
             <div className="text-sm opacity-80">Recovered Value</div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <div className="text-2xl font-bold text-blue-100 dark:text-blue-200">12,000+</div>
             <div className="text-sm opacity-80">Licenses Sold</div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <div className="text-2xl font-bold text-blue-100 dark:text-blue-200">98%</div>
             <div className="text-sm opacity-80">Satisfaction Rate</div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
-        {/* CTA buttons */}
-        <div className="flex flex-wrap gap-4">
-          <button className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 py-3 px-8 rounded-lg font-medium shadow-md flex items-center gap-2 group transition-all duration-200">
+        {/* CTA buttons with animation */}
+        <motion.div 
+          className="flex flex-wrap gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
+        >
+          <motion.button 
+            className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 py-3 px-8 rounded-lg font-medium shadow-md flex items-center gap-2 group transition-all duration-200"
+            whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
+            whileTap={{ scale: 0.98 }}
+          >
             Sell My Licenses
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </button>
-          <button className="bg-transparent border border-white/30 hover:bg-white/10 py-3 px-8 rounded-lg font-medium flex items-center gap-2 transition-all duration-200">
+          </motion.button>
+          <motion.button 
+            className="bg-transparent border border-white/30 hover:bg-white/10 py-3 px-8 rounded-lg font-medium flex items-center gap-2 transition-all duration-200"
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+            whileTap={{ scale: 0.98 }}
+          >
             How It Works
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
       
-      {/* Card section */}
-      <div className="relative">
+      {/* Card section with animation */}
+      <motion.div 
+        className="relative"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ 
+          duration: 0.8, 
+          delay: 0.4,
+          type: "spring",
+          stiffness: 100
+        }}
+      >
         <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 dark:bg-yellow-500 rounded-lg opacity-20 blur-2xl"></div>
         <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-400 dark:bg-purple-600 rounded-lg opacity-20 blur-2xl"></div>
         
-        <div className="bg-white/95 dark:bg-gray-800/95 p-8 rounded-2xl shadow-xl relative backdrop-blur-sm border border-white/20 dark:border-gray-700/30">
-          <div className="absolute -top-3 -right-3 bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-300 text-xs font-bold py-1 px-3 rounded-full">
+        <motion.div 
+          className="bg-white/95 dark:bg-gray-800/95 p-8 rounded-2xl shadow-xl relative backdrop-blur-sm border border-white/20 dark:border-gray-700/30"
+          whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+        >
+          <motion.div 
+            className="absolute -top-3 -right-3 bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-300 text-xs font-bold py-1 px-3 rounded-full"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+          >
             Instant Quote
-          </div>
+          </motion.div>
           
-          <div className="bg-gray-100 dark:bg-gray-700/60 p-4 rounded-xl mb-6">
+          <motion.div 
+            className="bg-gray-100 dark:bg-gray-700/60 p-4 rounded-xl mb-6"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
+          >
             <div className="h-4 w-3/4 bg-blue-200 dark:bg-blue-700/60 rounded mb-3"></div>
             <div className="h-4 w-1/2 bg-blue-200 dark:bg-blue-700/60 rounded"></div>
-          </div>
+          </motion.div>
           
-          <div className="flex items-center gap-4 mb-6">
+          <motion.div 
+            className="flex items-center gap-4 mb-6"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.4 }}
+          >
             <div className="h-14 w-14 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center text-green-600 dark:text-green-300 text-xl">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -417,27 +554,59 @@ function App() {
               <div className="h-4 w-32 bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
               <div className="h-3 w-48 bg-gray-200 dark:bg-gray-600 rounded"></div>
             </div>
-          </div>
+          </motion.div>
           
-          <button className="h-12 w-full bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 hover:from-blue-600 hover:to-blue-700 dark:hover:from-blue-500 dark:hover:to-blue-600 rounded-lg flex items-center justify-center text-white font-medium gap-2 transition-all duration-200 shadow-md hover:shadow-lg">
+          <motion.button 
+            className="h-12 w-full bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 hover:from-blue-600 hover:to-blue-700 dark:hover:from-blue-500 dark:hover:to-blue-600 rounded-lg flex items-center justify-center text-white font-medium gap-2 transition-all duration-200 shadow-md hover:shadow-lg"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.4 }}
+            whileHover={{ scale: 1.03, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
+            whileTap={{ scale: 0.98 }}
+          >
             Get Valuation
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </button>
+          </motion.button>
           
-          {/* Trust indicators */}
-          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700/30">
+          {/* Trust indicators with animation */}
+          <motion.div 
+            className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700/30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+          >
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center mb-3">Trusted by organizations worldwide</p>
             <div className="flex justify-between items-center opacity-70">
-              <div className="h-5 w-16 bg-gray-300 dark:bg-gray-600 rounded"></div>
-              <div className="h-5 w-12 bg-gray-300 dark:bg-gray-600 rounded"></div>
-              <div className="h-5 w-14 bg-gray-300 dark:bg-gray-600 rounded"></div>
-              <div className="h-5 w-10 bg-gray-300 dark:bg-gray-600 rounded"></div>
+              <motion.div 
+                className="h-5 w-16 bg-gray-300 dark:bg-gray-600 rounded"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.7 }}
+                transition={{ delay: 1.3, duration: 0.3 }}
+              ></motion.div>
+              <motion.div 
+                className="h-5 w-12 bg-gray-300 dark:bg-gray-600 rounded"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.7 }}
+                transition={{ delay: 1.4, duration: 0.3 }}
+              ></motion.div>
+              <motion.div 
+                className="h-5 w-14 bg-gray-300 dark:bg-gray-600 rounded"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.7 }}
+                transition={{ delay: 1.5, duration: 0.3 }}
+              ></motion.div>
+              <motion.div 
+                className="h-5 w-10 bg-gray-300 dark:bg-gray-600 rounded" 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.7 }}
+                transition={{ delay: 1.6, duration: 0.3 }}
+              ></motion.div>
             </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   </div>
   
