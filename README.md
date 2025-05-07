@@ -1,12 +1,59 @@
-# React + Vite
+SoftSell – Software License Resale Landing Page
+SoftSell is a fictional single-page marketing website designed for a startup that helps people sell unused software licenses. The site is built using React and Tailwind CSS and is fully responsive with a clean, modern interface. It’s hosted live at: [your live site URL here].
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features Implemented
+A hero section with a clear headline, short subheading, and a strong call-to-action button.
 
-Currently, two official plugins are available:
+A "How It Works" section showing three simple steps to sell a license: Upload License → Get Valuation → Get Paid, each with an icon.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A "Why Choose Us" section highlighting four benefits of using SoftSell (secure transactions, fast payouts, transparent valuation, and 24/7 support).
 
-## Expanding the ESLint configuration
+Two customer testimonials to build trust.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A fully functional contact form with fields for name, email, company, license type (dropdown), and message. Includes basic front-end validation.
+
+Bonus Features
+A light and dark mode toggle for better accessibility and user preference.
+
+SEO meta tags and a meaningful page title for better discoverability.
+
+Placeholder favicon and logo to make the site feel more real.
+
+Smooth animations using Framer Motion to enhance the user experience.
+
+A basic chat widget that responds to hardcoded example questions like "How do I sell my license?"
+
+Design Choices
+I chose Tailwind CSS to speed up styling and maintain a clean, responsive layout. The color scheme is simple and professional to suit a B2B tech product. Components are modular, making the site easy to maintain and update. I focused on clear navigation and visual hierarchy to guide users from understanding the service to taking action.
+
+Time Spent
+Planning and UI design took around  20mins.
+Building and testing the main sections took about 1 hr.
+Bonus features and responsiveness adjustments took another  30 mins.
+In total, I spent roughly  2 hours on this project.
+
+Tech Stack
+React.js with Vite
+Tailwind CSS for styling
+Framer Motion for animations
+react-icons for iconography
+
+Live Website
+Check out the live site here: [Insert live link]
+
+How to Run Locally
+Clone the repo:
+git clone https://github.com/Parthiban1805/SoftSell
+
+Navigate into the project folder:
+
+Install the dependencies:
+npm install
+
+Start the development server:
+npm run dev
+
+Contact
+Built by Parthiban S.
+Feel free to reach out at parthi.s1805@gmail.com if you'd like to connect.
+
