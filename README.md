@@ -1,5 +1,5 @@
 SoftSell – Software License Resale Landing Page
-SoftSell is a fictional single-page marketing website designed for a startup that helps people sell unused software licenses. The site is built using React and Tailwind CSS and is fully responsive with a clean, modern interface. It’s hosted live at: [your live site URL here].
+SoftSell is a fictional single-page marketing website designed for a startup that helps people sell unused software licenses. The site is built using React and Tailwind CSS and is fully responsive with a clean, modern interface. It’s hosted live at:(https://soft-sell-git-main-parthiban-ss-projects.vercel.app/).
 
 Features Implemented
 A hero section with a clear headline, short subheading, and a strong call-to-action button.
